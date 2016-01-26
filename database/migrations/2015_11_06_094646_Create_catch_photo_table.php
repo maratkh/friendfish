@@ -3,9 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWaterTable extends Migration
+class CreateCatchPhotoTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -13,15 +12,14 @@ class CreateWaterTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('waters')){
-            Schema::create('waters', function(Blueprint $table){
+        if(!Schema::hasTable('postphoto')){
+            Schema::create('postphoto', function(Blueprint $table){
                 $table->increments('id');
-                $table->integer('watertypeid'); //�����
+                $table->integer('catch_id');
                 $table->string('name');
                 $table->text('description');
-                $table->integer('region_id');
+                $table->string('photo');
                 $table->timestamps();
-                $table->foreign('watertypeid')->references('id')->on('watertypes');
 
             });
         }
@@ -34,9 +32,8 @@ class CreateWaterTable extends Migration
      */
     public function down()
     {
-        if(Schema::hasTable('waters')){
-            Schema::drop('waters');
+        if(Schema::hasTable('postphoto')){
+            Schema::drop('postphoto');
         }
     }
-
 }
