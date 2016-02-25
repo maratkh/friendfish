@@ -13,7 +13,7 @@ class CreateWaterTypeTable extends Migration
     public function up()
     {
         if(!Schema::hasTable('watertypes')){
-            Schema::create('waterstypes', function(Blueprint $table){
+            Schema::create('watertypes', function(Blueprint $table){
                 $table->increments('id');
                 $table->string('name');
                 $table->text('description');

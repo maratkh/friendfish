@@ -13,13 +13,12 @@ class CreateRegionTable extends Migration
     public function up()
     {
         if(!Schema::hasTable('regions')){
-            Schema::create('regions', function(Blueprint $table){
-                $table->increments('id');
-                $table->integer('code');
-                $table->string('name');
-                $table->text('description');
-                $table->timestamps();
-
+            Schema::create('regions', function(Blueprint $blueprint){
+                $blueprint->increments('id');
+                $blueprint->string('name');
+                $blueprint->string('code');
+                $blueprint->string('fias');
+                $blueprint->timestamps();
             });
         }
     }
@@ -31,8 +30,7 @@ class CreateRegionTable extends Migration
      */
     public function down()
     {
-        if(Schema::hasTable('regions')){
-            Schema::drop('regions');
-        }
+        Schema::drop('regions');
     }
+
 }

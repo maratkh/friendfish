@@ -16,12 +16,12 @@ class CreateWaterTable extends Migration
         if(!Schema::hasTable('waters')){
             Schema::create('waters', function(Blueprint $table){
                 $table->increments('id');
-                $table->integer('watertypeid'); //�����
+                $table->integer('watertypeid');
                 $table->string('name');
                 $table->text('description');
                 $table->integer('region_id');
                 $table->timestamps();
-                $table->foreign('watertypeid')->references('id')->on('watertypes');
+
 
             });
         }

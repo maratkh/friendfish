@@ -9,6 +9,5 @@ class Water extends Model
     protected $fillable =
         [
             'name'
-
         ];
 }

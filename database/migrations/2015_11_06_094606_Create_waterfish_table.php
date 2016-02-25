@@ -14,10 +14,8 @@ class CreateWaterfishTable extends Migration
     {
         if(!Schema::hasTable('water_fish')){
             Schema::create('water_fish', function(Blueprint $table){
-                $table->increments('id');
                 $table->integer('water_id');
                 $table->integer('fish_id');
-                $table->timestamps();
 
             });
         }

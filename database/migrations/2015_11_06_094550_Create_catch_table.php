@@ -12,8 +12,8 @@ class CreateCatchTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('post')){
-            Schema::create('post', function(Blueprint $table){
+        if(!Schema::hasTable('catch_post')){
+            Schema::create('catch_post', function(Blueprint $table){
                 $table->increments('id');
                 $table->string('name');
                 $table->text('description');
@@ -23,7 +23,6 @@ class CreateCatchTable extends Migration
                 $table->integer("bait_id");
                 $table->integer("privacylevel_id");
                 $table->integer("user_id");
-
                 $table->timestamp('catchdate');
                 $table->timestamps();
 
@@ -38,8 +37,8 @@ class CreateCatchTable extends Migration
      */
     public function down()
     {
-        if(Schema::hasTable('post')){
-            Schema::drop('post');
+        if(Schema::hasTable('catch_post')){
+            Schema::drop('catch_post');
         }
     }
 }
